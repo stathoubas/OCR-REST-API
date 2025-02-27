@@ -61,8 +61,8 @@ This repository contains a FastAPI-based OCR REST API that leverages the [GOT-OC
    Open your web browser and navigate to:
    ```bash
    http://localhost:8000/docs
-  Test the /ocr endpoint using the Swagger UI.
-  The API will be accessible at http://localhost:8000.
+   Test the /ocr endpoint using the Swagger UI.
+   The API will be accessible at http://localhost:8000.
 
 
 

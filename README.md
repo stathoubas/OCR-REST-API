@@ -3,21 +3,21 @@ This repository contains a simple OCR REST API built with FastAPI, Hugging Face 
 
 ## Installation & Running Locally
 
-   # Clone the Repository:
+   ### Clone the Repository:
 
 git clone https://github.com/<your-username>/<your-repo-name>.git
 cd <your-repo-name>
 
-# Set Up a Virtual Environment (Optional but Recommended):
+### Set Up a Virtual Environment (Optional but Recommended):
 
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
 
-# Install Dependencies:
+## Install Dependencies:
 
 pip install -r requirements.txt
 
-# Run the API:
+### Run the API:
 
     uvicorn app:app --reload
 
@@ -25,10 +25,10 @@ pip install -r requirements.txt
 
 ## Using the /ocr Endpoint
 
-  #  Via Swagger UI:
+  ###  Via Swagger UI:
     Visit http://127.0.0.1:8000/docs and use the interactive interface to upload an image and get the extracted text.
 
-   # Via cURL:
+   ### Via cURL:
 
     curl -X POST "http://127.0.0.1:8000/ocr" -F "file=@/path/to/your/image.jpg"
 
@@ -39,11 +39,11 @@ pip install -r requirements.txt
 This repository includes a sample Dockerfile to containerize the OCR API.
 Building the Docker Image
 
-   # Open a terminal and navigate to the project directory:
+   ### Open a terminal and navigate to the project directory:
 
 cd <your-repo-name>
 
-# Build the Docker image:
+### Build the Docker image:
 
     docker build -t ocr-api .
 

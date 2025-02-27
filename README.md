@@ -2,7 +2,6 @@
 
 This repository contains a FastAPI-based OCR REST API that leverages the [GOT-OCR 2.0](https://huggingface.co/stepfun-ai/GOT-OCR-2.0-hf) model to extract text from images. The API exposes a single endpoint (`/ocr`) that accepts an image file and returns the extracted text.
 
-
 ## Installation & Running Locally
 
 1. **Clone the repository:**
@@ -41,7 +40,6 @@ This repository contains a FastAPI-based OCR REST API that leverages the [GOT-OC
    curl -X POST "http://127.0.0.1:8000/ocr" -F "file=@/path/to/your/image.jpg"
    Replace /path/to/your/image.jpg with the actual path to your image file.
 
-
 ## Containerizing the API with Docker
 
 1. **Build the Docker image:**
@@ -63,7 +61,5 @@ This repository contains a FastAPI-based OCR REST API that leverages the [GOT-OC
    http://localhost:8000/docs
    Test the /ocr endpoint using the Swagger UI.
    The API will be accessible at http://localhost:8000.
-
-
 
    

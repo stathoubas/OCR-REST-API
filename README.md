@@ -1,68 +1,69 @@
-# OCR-REST-API
-This repository contains a simple OCR REST API built with FastAPI, Hugging Face Transformers, and PyTorch. The API exposes a single endpoint "/ocr" that accepts an image file and returns the extracted text.
+# OCR REST API
+
+This repository contains a FastAPI-based OCR REST API that leverages the [GOT-OCR 2.0](https://huggingface.co/stepfun-ai/GOT-OCR-2.0-hf) model to extract text from images. The API exposes a single endpoint (`/ocr`) that accepts an image file and returns the extracted text.
+
 
 ## Installation & Running Locally
 
-   ### 1.Clone the Repository:
+1. **Clone the repository:**
 
-git clone https://github.com/<your-username>/<your-repo-name>.git
+   ```bash
+   git clone https://github.com/stathoubas/OCR-REST-API.git
+   cd your-repo
 
-cd <your-repo-name>
+2. **Set up a virtual environment (recommended):**
 
-### 2. Set Up a Virtual Environment (Optional but Recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   
+3. **Install the dependencies:**
 
-python -m venv venv
-source venv/bin/activate  
+   ```bash
+   pip install -r requirements.txt
 
-## 3. Install Dependencies:
+4. **Run the API server with Uvicorn:**
 
-pip install -r requirements.txt
-
-### 4. Run the API:
-
-    uvicorn app:app --reload
-
-    The API will be accessible at http://127.0.0.1:8000 with interactive documentation available at http://127.0.0.1:8000/docs.
+   ```bash
+   uvicorn app:app --reload
+   The API will be available at http://127.0.0.1:8000
 
 ## Using the /ocr Endpoint
 
-  ###  Via Swagger UI:
-    Visit http://127.0.0.1:8000/docs and use the interactive interface to upload an image and get the extracted text.
+1. **Via Swagger UI:**
 
-   ### Via cURL:
+   ```bash
+   Visit http://127.0.0.1:8000/docs and use the interactive interface to upload an image and get the extracted text.
 
-    curl -X POST "http://127.0.0.1:8000/ocr" -F "file=@/path/to/your/image.jpg"
+2. **Via cURL:**
 
-    Replace /path/to/your/image.jpg with the actual path to your image file.
+   ```bash
+   curl -X POST "http://127.0.0.1:8000/ocr" -F "file=@/path/to/your/image.jpg"
+   Replace /path/to/your/image.jpg with the actual path to your image file.
+
 
 ## Containerizing the API with Docker
 
-This repository includes a sample Dockerfile to containerize the OCR API.
-Building the Docker Image
+1. **Build the Docker image:**
 
-   ### 1. Open a terminal and navigate to the project directory:
+   ```bash
+   In the repository root (where your Dockerfile is located), build the image:
+   docker build -t ocr-api .
+   This command uses the provided Dockerfile to build an image tagged as ocr-api.
 
-cd <your-repo-name>
+2. **Run the Docker Container:**
 
-### 2. Build the Docker image:
+   ```bash
+   docker run -p 8000:8000 ocr-api
+   The API will be accessible at http://localhost:8000.
 
-    docker build -t ocr-api .
+3. **Verify the API:**
+   Open your web browser and navigate to:
+   ```bash
+   http://localhost:8000/docs
+  Test the /ocr endpoint using the Swagger UI.
+   The API will be accessible at http://localhost:8000.
 
-    This command uses the provided Dockerfile to build an image tagged as ocr-api.
 
-## Running the Docker Container
 
-Run the container with:
-
-docker run -p 8000:8000 ocr-api
-
-The API will now be accessible at http://localhost:8000.
-
-## Testing the Containerized API
-
-    Swagger UI:
-    Open http://localhost:8000/docs in your web browser.
-
-    cURL:
-
-curl -X POST "http://localhost:8000/ocr" -F "file=@/path/to/your/image.jpg"
+   
